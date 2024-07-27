@@ -17,9 +17,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 const corsOptions = {
-   origin:'http://localhost:5173',
+   origin:['https://full-stack-job-portal.vercel.app'],
   credentials:true,   
   // withCredentials
+  methods:['GET', 'POST', 'PUT', 'DELETE'],
 }; 
 
 app.use(cors(corsOptions));
