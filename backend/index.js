@@ -17,20 +17,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 const corsOptions = {
-   origin:['https://full-stack-job-portal.vercel.app'],
-  credentials:true,   
-  // withCredentials
-  methods:['GET', 'POST', 'PUT', 'DELETE'],
-}; 
+  //  origin:['https://full-stack-job-portal.vercel.app'],
+  // credentials:true,
+  // // withCredentials
+  // methods:['GET', 'POST', 'PUT', 'DELETE'],
+  origin: "https://full-stack-job-portal.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
 
 app.use(cors(corsOptions));
 
 // routes to find the data
-app.use("/api/v1/user",router)
-app.use("/api/v1/company",Companyrouter)
-app.use("/api/v1/job",jobRouter)
-app.use("/api/v1/application",Applicationrouter)
- 
+app.use("/api/v1/user", router);
+app.use("/api/v1/company", Companyrouter);
+app.use("/api/v1/job", jobRouter);
+app.use("/api/v1/application", Applicationrouter);
+
 app.get("/", (req, res) => {
   res.send("Welcome to our World");
 });
