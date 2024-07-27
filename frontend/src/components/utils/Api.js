@@ -1,8 +1,8 @@
-export const url="http://localhost:4000/api/v1/user"
-export const Joburl = "http://localhost:4000/api/v1/job"
+export const url="https://full-stack-job-portal-bakend.vercel.app/api/v1/user"
+export const Joburl = "https://full-stack-job-portal-bakend.vercel.app/api/v1/job"
 
-export const applicationUrl = "http://localhost:4000/api/v1/application/apply"
+export const applicationUrl = "https://full-stack-job-portal-bakend.vercel.app/api/v1/application/apply"
 
-export const applicantUrl = "http://localhost:4000/api/v1/application"
+export const applicantUrl = "https://full-stack-job-portal-bakend.vercel.app/api/v1/application"
 
-export const companyUrl="http://localhost:4000/api/v1/company"
+export const companyUrl="https://full-stack-job-portal-bakend.vercel.app/api/v1/company"
