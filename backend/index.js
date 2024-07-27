@@ -16,17 +16,16 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-const corsOptions = {
-  //  origin:['https://full-stack-job-portal.vercel.app'],
-  // credentials:true,
-  // // withCredentials
-  // methods:['GET', 'POST', 'PUT', 'DELETE'],
-  origin: "https://full-stack-job-portal.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
+app.use(
+  cors({
+    origin: "https://full-stack-job-portal.vercel.app", // Allow only this origin
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  })
+);
 
-app.use(cors(corsOptions));
+// For handling preflight requests
+app.options("*", cors());
 
 // routes to find the data
 app.use("/api/v1/user", router);
