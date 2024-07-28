@@ -20,7 +20,8 @@ app.use(
   cors({
     origin:"https://job-hunt-opal.vercel.app", // Allow only this origin
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    // allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    credentials: true, // Enable cookies in requests
   })
 );
 // app.use(cors());
