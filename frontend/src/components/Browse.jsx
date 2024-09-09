@@ -3,6 +3,7 @@ import Job from './Jobs/Job'
 import { useDispatch, useSelector } from 'react-redux'
 import useGetAllJobs from '@/hooks/useGetAllJobs';
 import { setSearchText } from '@/Redux/jobSlic';
+import Navbar from './shared/Navbar';
 const Browse = () => {
   const dispatch=useDispatch();
   const{allJobs}=useSelector(store=>store.job);
@@ -15,6 +16,7 @@ const Browse = () => {
    })
   return (
     <div className=' max-w-7xl mx-auto my-10'>
+      <Navbar/>
       <h1 className="font-bold text-xl my-10">Search Result ({allJobs.length})</h1>
        <div className=' grid grid-cols-3 gap-4 '>
          {
